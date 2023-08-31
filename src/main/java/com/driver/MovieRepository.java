@@ -9,17 +9,16 @@ import java.util.Map;
 
 @Repository
 public class MovieRepository {
-
     Map<String,Movie> hm = new HashMap<>();
     Map<String,Director> hm1 = new HashMap<>();
     Map<String,List> hm2 = new HashMap<>();
 
     public void addMovie(Movie movie) {
-        hm.put(movie.getmName(),movie);
+        hm.put(movie.getName(),movie);
     }
 
     public void addDirector(Director director) {
-        hm1.put(director.getdName(),director);
+        hm1.put(director.getName(),director);
     }
 
     public void addMovieDirectorPair(String mName, String dName) {
@@ -48,8 +47,6 @@ public class MovieRepository {
     public Director getDirectorByName(String name) {
         return hm1.get(name);
     }
-
-
 
     public List getMoviesByDirectorName(String dName) {
         return hm2.get(dName);
